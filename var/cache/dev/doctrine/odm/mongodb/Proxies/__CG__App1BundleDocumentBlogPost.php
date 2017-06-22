@@ -64,10 +64,10 @@ class BlogPost extends \App1Bundle\Document\BlogPost implements \Doctrine\ODM\Mo
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'category'];
+            return ['__isInitialized__', 'id', 'category', 'title', 'body', '' . "\0" . 'App1Bundle\\Document\\BlogPost' . "\0" . 'draft'];
         }
 
-        return ['__isInitialized__', 'id', 'category'];
+        return ['__isInitialized__', 'id', 'category', 'title', 'body', '' . "\0" . 'App1Bundle\\Document\\BlogPost' . "\0" . 'draft'];
     }
 
     /**
@@ -208,6 +208,72 @@ class BlogPost extends \App1Bundle\Document\BlogPost implements \Doctrine\ODM\Mo
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCategory', []);
 
         return parent::getCategory();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTitle($title)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTitle', [$title]);
+
+        return parent::setTitle($title);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTitle()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTitle', []);
+
+        return parent::getTitle();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setBody($body)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBody', [$body]);
+
+        return parent::setBody($body);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBody()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBody', []);
+
+        return parent::getBody();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDraft($draft)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDraft', [$draft]);
+
+        return parent::setDraft($draft);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDraft()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDraft', []);
+
+        return parent::getDraft();
     }
 
 }

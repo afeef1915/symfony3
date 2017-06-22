@@ -50,6 +50,42 @@ class App1BundleDocumentBlogPostHydrator implements HydratorInterface
             $this->class->reflFields['category']->setValue($document, $return);
             $hydratedData['category'] = $return;
         }
+
+        /** @Field(type="string") */
+        if (isset($data['title']) || (! empty($this->class->fieldMappings['title']['nullable']) && array_key_exists('title', $data))) {
+            $value = $data['title'];
+            if ($value !== null) {
+                $return = (string) $value;
+            } else {
+                $return = null;
+            }
+            $this->class->reflFields['title']->setValue($document, $return);
+            $hydratedData['title'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['body']) || (! empty($this->class->fieldMappings['body']['nullable']) && array_key_exists('body', $data))) {
+            $value = $data['body'];
+            if ($value !== null) {
+                $return = (string) $value;
+            } else {
+                $return = null;
+            }
+            $this->class->reflFields['body']->setValue($document, $return);
+            $hydratedData['body'] = $return;
+        }
+
+        /** @Field(type="boolean") */
+        if (isset($data['draft']) || (! empty($this->class->fieldMappings['draft']['nullable']) && array_key_exists('draft', $data))) {
+            $value = $data['draft'];
+            if ($value !== null) {
+                $return = (bool) $value;
+            } else {
+                $return = null;
+            }
+            $this->class->reflFields['draft']->setValue($document, $return);
+            $hydratedData['draft'] = $return;
+        }
         return $hydratedData;
     }
 }

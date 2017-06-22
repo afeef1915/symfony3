@@ -491,6 +491,44 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
                 }
 
+                if (0 === strpos($pathinfo, '/admin/app1/post')) {
+                    // admin_app1_post_list
+                    if ($pathinfo === '/admin/app1/post/list') {
+                        return array (  '_controller' => 'App1Bundle:PostAdmin:list',  '_sonata_admin' => 'app.admin.post',  '_sonata_name' => 'admin_app1_post_list',  '_route' => 'admin_app1_post_list',);
+                    }
+
+                    // admin_app1_post_create
+                    if ($pathinfo === '/admin/app1/post/create') {
+                        return array (  '_controller' => 'App1Bundle:PostAdmin:create',  '_sonata_admin' => 'app.admin.post',  '_sonata_name' => 'admin_app1_post_create',  '_route' => 'admin_app1_post_create',);
+                    }
+
+                    // admin_app1_post_batch
+                    if ($pathinfo === '/admin/app1/post/batch') {
+                        return array (  '_controller' => 'App1Bundle:PostAdmin:batch',  '_sonata_admin' => 'app.admin.post',  '_sonata_name' => 'admin_app1_post_batch',  '_route' => 'admin_app1_post_batch',);
+                    }
+
+                    // admin_app1_post_edit
+                    if (preg_match('#^/admin/app1/post/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_app1_post_edit')), array (  '_controller' => 'App1Bundle:PostAdmin:edit',  '_sonata_admin' => 'app.admin.post',  '_sonata_name' => 'admin_app1_post_edit',));
+                    }
+
+                    // admin_app1_post_delete
+                    if (preg_match('#^/admin/app1/post/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_app1_post_delete')), array (  '_controller' => 'App1Bundle:PostAdmin:delete',  '_sonata_admin' => 'app.admin.post',  '_sonata_name' => 'admin_app1_post_delete',));
+                    }
+
+                    // admin_app1_post_show
+                    if (preg_match('#^/admin/app1/post/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_app1_post_show')), array (  '_controller' => 'App1Bundle:PostAdmin:show',  '_sonata_admin' => 'app.admin.post',  '_sonata_name' => 'admin_app1_post_show',));
+                    }
+
+                    // admin_app1_post_export
+                    if ($pathinfo === '/admin/app1/post/export') {
+                        return array (  '_controller' => 'App1Bundle:PostAdmin:export',  '_sonata_admin' => 'app.admin.post',  '_sonata_name' => 'admin_app1_post_export',  '_route' => 'admin_app1_post_export',);
+                    }
+
+                }
+
             }
 
         }

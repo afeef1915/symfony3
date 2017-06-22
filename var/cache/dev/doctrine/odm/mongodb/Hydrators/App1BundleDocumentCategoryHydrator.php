@@ -50,6 +50,18 @@ class App1BundleDocumentCategoryHydrator implements HydratorInterface
             $this->class->reflFields['blog_posts']->setValue($document, $return);
             $hydratedData['blog_posts'] = $return;
         }
+
+        /** @Field(type="string") */
+        if (isset($data['name']) || (! empty($this->class->fieldMappings['name']['nullable']) && array_key_exists('name', $data))) {
+            $value = $data['name'];
+            if ($value !== null) {
+                $return = (string) $value;
+            } else {
+                $return = null;
+            }
+            $this->class->reflFields['name']->setValue($document, $return);
+            $hydratedData['name'] = $return;
+        }
         return $hydratedData;
     }
 }

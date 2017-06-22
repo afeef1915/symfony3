@@ -13,6 +13,9 @@ class BlogPostAdmin extends AbstractAdmin {
 
     public function toString($object) {
         return $object instanceof BlogPost ? $object->getTitle() : 'Blog Post'; // shown in the breadcrumb on the create view
+      
+        return $object instanceof Category ? $object->getname() : 'category'; // shown in the breadcrumb on the create view
+    
     }
 
     protected function configureFormFields(FormMapper $formMapper) {

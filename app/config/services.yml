@@ -19,13 +19,13 @@ services:
         tags:
             - { name: sonata.admin, manager_type: doctrine_mongodb, label: Blog post }
             
-#    app.admin.post:
-#        class: App1Bundle\Admin\PostAdmin
-#        tags:
-#            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Post" }
-#        arguments:
-#            - ~
-#            - App1Bundle\Document\Post
-#            - ~
-#        calls:
-#            - [ setTranslationDomain, [App1Bundle]]
+    app.admin.post:
+        class: App1Bundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Post" }
+        arguments:
+            - ~
+            - App1Bundle\Document\Post
+            - App1Bundle:PostAdmin
+        calls:
+            - [ setTranslationDomain, [AppBundle]]

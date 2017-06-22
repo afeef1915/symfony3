@@ -10,9 +10,9 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class CategoryAdmin extends AbstractAdmin
 {
-//    public function toString($object) {
-//        return $object instanceof Category ? $object->getName() : 'Blog Post'; // shown in the breadcrumb on the create view
-//    }
+    public function toString($object) {
+        return $object instanceof Category ? $object->getname() : 'Blog Post'; // shown in the breadcrumb on the create view
+    }
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('name', 'text');

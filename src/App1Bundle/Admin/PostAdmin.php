@@ -1,13 +1,13 @@
 <?php
-//src/App1Bundle/Admin/PostAdmin.php
+// src/AppBundle/Admin/PostAdmin.php
 
 namespace App1Bundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
-use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class PostAdmin extends AbstractAdmin
 {
@@ -15,46 +15,47 @@ class PostAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-//            ->add('title', 'text', array(
-//                'label' => 'Post Title'
+            ->add('title', 'text', array(
+                'label' => 'Post Title'
+            ))
+//            ->add('author', 'entity', array(
+//                'class' => 'AppBundle\Document\User'
 //            ))
-////            ->add('author', 'entity', array(
-////                'class' => 'AppBundle\Entity\User'
-////            ))
-//
-//            // if no type is specified, SonataAdminBundle tries to guess it
-//            ->add('body')
+
+            // if no type is specified, SonataAdminBundle tries to guess it
+            ->add('body')
 
             // ...
-       ;
+        ;
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-//       $datagridMapper
-//            ->add('title')
-//            ->add('author')
-//       ;
+        $datagridMapper
+            ->add('title')
+            ->add('author')
+        ;
     }
 
     // Fields to be shown on lists
     protected function configureListFields(ListMapper $listMapper)
     {
-//        $listMapper
-//            ->addIdentifier('title')
-//            ->add('slug')
-//            ->add('author')
-//       ;
+        $listMapper
+            ->addIdentifier('title')
+            ->add('slug')
+            ->add('author')
+        ;
     }
 
     // Fields to be shown on show action
     protected function configureShowFields(ShowMapper $showMapper)
     {
-//        $showMapper
-//           ->add('title')
-//           ->add('slug')
-//           ->add('author')
-//       ;
+        $showMapper
+            ->add('id')
+            ->add('title')
+            ->add('slug')
+            ->add('author')
+        ;
     }
 }

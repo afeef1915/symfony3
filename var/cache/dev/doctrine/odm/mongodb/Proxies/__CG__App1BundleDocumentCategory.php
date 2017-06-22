@@ -64,10 +64,10 @@ class Category extends \App1Bundle\Document\Category implements \Doctrine\ODM\Mo
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'blog_posts'];
+            return ['__isInitialized__', 'id', 'blog_posts', 'name'];
         }
 
-        return ['__isInitialized__', 'id', 'blog_posts'];
+        return ['__isInitialized__', 'id', 'blog_posts', 'name'];
     }
 
     /**
@@ -208,6 +208,28 @@ class Category extends \App1Bundle\Document\Category implements \Doctrine\ODM\Mo
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBlogPosts', []);
 
         return parent::getBlogPosts();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setName($name)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setName', [$name]);
+
+        return parent::setName($name);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getName()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getName', []);
+
+        return parent::getName();
     }
 
 }
