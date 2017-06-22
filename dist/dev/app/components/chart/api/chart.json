@@ -1,0 +1,146 @@
+{
+  "charts": [
+    {
+      "canvasAttrs": {
+        "id": "line",
+        "class": "chart chart-line chart-xl",
+        "data": "line.data",
+        "labels": "line.labels",
+        "legend": "true",
+        "click": "line.onClick",
+        "series": "line.series"
+      },
+      "type": "line",
+      "title": "Line Chart",
+      "labels": [
+        "January", "February", "March", "April", "May", "June", "July"
+      ],
+      "series": [
+        "Series A", "Series B"
+      ],
+      "data": [
+        [
+          65, 59, 80, 81, 56, 55, 40
+        ],
+        [
+          28, 48, 40, 19, 86, 27, 90
+        ]
+      ]
+    },
+    {
+      "canvasAttrs": {
+        "id": "bar",
+        "class": "chart chart-bar",
+        "data": "bar.data",
+        "labels": "bar.labels",
+        "series": "bar.series",
+        "options": "bar.options"
+      },
+      "type": "bar",
+      "title": "Bar Chart",
+      "labels": [
+        "2006", "2007", "2008", "2009", "2010", "2011", "2012"
+      ],
+      "series": [
+        "Series A", "Series B"
+      ],
+      "data": [
+        [
+          65, 59, 80, 81, 56, 55, 40
+        ],
+        [
+          28, 48, 40, 19, 86, 27, 90
+        ]
+      ]
+    },
+    {
+      "canvasAttrs": {
+        "id": "doughnut",
+        "class": "chart chart-doughnut chart-xs",
+        "data": "donut.data",
+        "labels": "donut.labels",
+        "legend": "false"
+      },
+      "type": "donut",
+      "title": "Doughnut Chart",
+      "labels": [
+        "Download Sales", "In-Store Sales", "Mail-Order Sales"
+      ],
+      "data": [
+        300, 500, 100
+      ]
+    },
+    {
+      "canvasAttrs": {
+        "id": "area",
+        "class": "chart chart-radar",
+        "data": "radar.data",
+        "labels": "radar.labels",
+        "click": "onClick"
+      },
+      "type": "radar",
+      "title": "Radar Chart",
+      "labels": [
+        "Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"
+      ],
+      "data": [
+        [
+          65, 59, 90, 81, 56, 55, 40
+        ],
+        [
+          28, 48, 40, 19, 96, 27, 100
+        ]
+      ]
+    },
+    {
+      "canvasAttrs": {
+        "id": "pie",
+        "class": "chart chart-pie chart-xs",
+        "data": "pie.data",
+        "labels": "pie.labels"
+      },
+      "type": "pie",
+      "title": "Pie Chart",
+      "labels": [
+        "Download Sales", "In-Store Sales", "Mail-Order Sales"
+      ],
+      "data": [
+        300, 500, 100
+      ]
+    },
+    {
+      "canvasAttrs": {
+        "id": "polar",
+        "class": "chart chart-polar-area",
+        "data": "polar.data",
+        "labels": "polar.labels"
+      },
+      "type": "polar",
+      "title": "Polar Area Chart",
+      "labels": [
+        "Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"
+      ],
+      "data": [
+        300, 500, 100, 40, 120
+      ]
+    },
+    {
+      "canvasAttrs": {
+        "id": "base",
+        "class": "chart chart-base",
+        "chart-type": "dynamic.type",
+        "data": "dynamic.data",
+        "labels": "dynamic.labels",
+        "legend": "true"
+      },
+      "type": "PolarArea",
+      "title": "Dynamic Chart",
+      "labels": [
+        "Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"
+      ],
+      "data": [
+        300, 500, 100, 40, 120
+      ]
+    }
+  ]
+}

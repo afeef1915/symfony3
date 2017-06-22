@@ -1,0 +1,3 @@
+acme_store1_homepage:
+    path:     /
+    defaults: { _controller: AcmeStore1Bundle:Default:index }

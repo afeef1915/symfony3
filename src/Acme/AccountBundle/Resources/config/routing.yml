@@ -1,0 +1,9 @@
+acme_account_homepage:
+    path:     /
+    defaults: { _controller: AcmeAccountBundle:Default:index }
+acme_account_register_forms:
+    path:     /registration
+    defaults: { _controller: AcmeAccountBundle:Account:register }
+acme_account_register_create:
+    path:     /registration/create
+    defaults: { _controller: AcmeAccountBundle:Account:create }

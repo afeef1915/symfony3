@@ -1,0 +1,15 @@
+acme_store_homepage:
+    path:     /
+    defaults: { _controller: AcmeStoreBundle:Default:index }
+acme_store_homepage_create:
+    path:     /db-insert
+    defaults: { _controller: AcmeStoreBundle:Default:create }
+acme_store_homepage_show:
+    path:     /db-show
+    defaults: { _controller: AcmeStoreBundle:Default:show }
+acme_store_homepage_show_id:
+    path:     /db-show/{id}
+    defaults: { _controller: AcmeStoreBundle:Default:showById }
+acme_store_homepage_update_id:
+    path:     /db-update/{id}
+    defaults: { _controller: AcmeStoreBundle:Default:update }

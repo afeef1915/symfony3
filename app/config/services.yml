@@ -1,0 +1,31 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+    admin.category:
+        class: App1Bundle\Admin\CategoryAdmin
+        arguments: [~, App1Bundle\Document\Category, ~]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, label: Category }
+    
+    admin.blog_post:
+        class: App1Bundle\Admin\BlogPostAdmin
+        arguments: [~, App1Bundle\Document\BlogPost, ~]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, label: Blog post }
+            
+#    app.admin.post:
+#        class: App1Bundle\Admin\PostAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Post" }
+#        arguments:
+#            - ~
+#            - App1Bundle\Document\Post
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [App1Bundle]]

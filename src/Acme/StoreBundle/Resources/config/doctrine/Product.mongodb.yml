@@ -1,0 +1,10 @@
+# src/Acme/StoreBundle/Resources/config/doctrine/Product.mongodb.yml
+Acme\StoreBundle\Document\Product:
+    repositoryClass: Acme\StoreBundle\Repository\ProductRepository
+    fields:
+        id:
+            id:  true
+        name:
+            type: string
+        price:
+            type: float

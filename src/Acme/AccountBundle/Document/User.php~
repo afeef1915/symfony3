@@ -1,0 +1,34 @@
+<?php
+// src/Acme/AccountBundle/Document/User.php
+namespace Acme\AccountBundle\Document;
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Bundle\MongoDBBundle\Validator\Constraints\Unique as MongoDBUnique;
+use Doctrine\ODM\MongoDB\Mapping\Annotations\Id;
+/**
+ * @MongoDB\Document(collection="users")
+ * @MongoDBUnique(fields="email")
+ */
+class User
+{
+    /**
+     * @MongoDB\Id
+     */
+    protected $id;
+
+    /**
+     * @MongoDB\Field(type="string")
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
+    protected $email;
+
+    /**
+     * @MongoDB\Field(type="string")
+     * @Assert\NotBlank()
+     */
+    protected $password;
+
+    
+}

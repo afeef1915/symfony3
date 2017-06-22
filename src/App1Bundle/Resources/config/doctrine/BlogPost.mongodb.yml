@@ -1,0 +1,12 @@
+App1Bundle\Document\BlogPost:
+    fields:
+        id:
+            id:  true
+        category:
+            type: string
+        title:
+            type: string
+        body:
+            type: string
+        draft:
+            type: boolean

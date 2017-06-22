@@ -1,0 +1,7 @@
+AppBundle\Document\Category:
+    fields:
+        id:
+            id:  true
+        blog_posts:
+            type: string
+        
