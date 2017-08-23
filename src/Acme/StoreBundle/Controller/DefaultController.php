@@ -109,6 +109,7 @@ class DefaultController extends Controller {
 //        $product->setPrice($data['price']);
 //        $dm->flush();
         die("data deleted successfully");
+        
         //return $this->redirectToRoute('homepage');
     }
 
