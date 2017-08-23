@@ -13,3 +13,6 @@ acme_store_homepage_show_id:
 acme_store_homepage_update_id:
     path:     /db-update/{id}
     defaults: { _controller: AcmeStoreBundle:Default:update }
+acme_store_homepage_deleteby_id:
+    path:     /db-delete/{id}
+    defaults: { _controller: AcmeStoreBundle:Default:delete }

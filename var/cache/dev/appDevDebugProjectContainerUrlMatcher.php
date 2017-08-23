@@ -169,6 +169,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_store_homepage_update_id')), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::updateAction',));
             }
 
+            // acme_store_homepage_deleteby_id
+            if (0 === strpos($pathinfo, '/db-delete') && preg_match('#^/db\\-delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_store_homepage_deleteby_id')), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::deleteAction',));
+            }
+
         }
 
         // homepage

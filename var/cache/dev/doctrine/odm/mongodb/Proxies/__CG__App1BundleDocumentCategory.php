@@ -232,4 +232,15 @@ class Category extends \App1Bundle\Document\Category implements \Doctrine\ODM\Mo
         return parent::getName();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }
